@@ -1,0 +1,28 @@
+meta {
+  name: login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "email": "demo3446@opsloom.com",
+      "password": "scoobydoo2"
+  }
+}
+
+script:post-response {
+  const cookies = res.getHeader('set-cookie');
+  
+  // Get the auth token value
+  const cval = cookies[0].split('=')[1].split(';')[0]
+  
+  // Set the token variable
+  bru.setEnvVar('token',cval)
+}

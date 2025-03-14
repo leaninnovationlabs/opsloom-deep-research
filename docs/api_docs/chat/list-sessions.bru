@@ -1,0 +1,19 @@
+meta {
+  name: list-sessions
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{server}}/chat/session
+  body: none
+  auth: bearer
+}
+
+headers {
+  access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpenphMkB1c2EuY29tIiwiYWNjb3VudF9pZCI6IjA1OGIyOTg4LWYyZGYtNDJlZi1iZTNhLTFjYTQzMzMyZDFhYiIsInVzZXJfaWQiOiJhYWVlMjNiMS1mNTZmLTQwZTAtODNhNC03MWMxMzI1NWJlYjEifQ.Dyg7c5zbBJ76icoWVa6ITQCEa-MFV5scw4tlGCCefeE
+}
+
+auth:bearer {
+  token: {{token}}
+}

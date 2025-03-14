@@ -1,0 +1,16 @@
+meta {
+  name: index document
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/index
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  file: @file(/Users/camilo/Documents/projects/opsloom/docs/assets/visa-application.pdf)
+  kbase_name: visa_kbase
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Deactivate Assistant
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{server}}/assistant
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "2b218d7e-4245-42c9-b488-eec2125fb521"
+  }
+}

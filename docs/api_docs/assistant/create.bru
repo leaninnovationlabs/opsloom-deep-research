@@ -1,0 +1,41 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/assistant
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "provider": "openai",
+    "name": "thai_embassy_assistant",
+    "account_short_code": "default",
+    "kbase_id": "6d1c6329-5916-4d3e-81a7-e949a5db3b83",
+    "system_prompts": {
+      "system": "You are an assistant for the Royal Thai Embassy in Washington, DC. Answer only visa-related questions using information from the provided context and only the provided context. If you don't feel confident answering a question, refer the user to other sources. You must respond cordially.",
+      "data_description": "The `month` column is a string, not a date, and should be treated as a categorical variable. Its possible values are `June`, `July`, `August`, or `September`."
+    },
+    "config": {
+      "model": "gpt-4o",
+      "type": "rag",
+      "provider": "openai",
+      "table_name": "aws_cost"
+    },
+    "metadata": {
+      "title": "Thai Embassy Assistant",
+      "description": "Ask a consular officer visa questions",
+      "icon": "support_agent",
+      "prompts": [
+        "How do I apply for a business visa?",
+        "Do I need a visa to go on vacation in Thailand?",
+        "How do I apply for a visa online?"
+      ]
+    }
+  }
+  
+}

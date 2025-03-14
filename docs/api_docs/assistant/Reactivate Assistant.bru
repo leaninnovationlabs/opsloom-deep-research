@@ -1,0 +1,17 @@
+meta {
+  name: Reactivate Assistant
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{server}}/assistant
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "abcdef52-3496-1295-acce-ef1224563890"
+  }
+}

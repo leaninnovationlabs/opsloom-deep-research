@@ -1,0 +1,44 @@
+meta {
+  name: update assistant
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{server}}/assistant
+  body: json
+  auth: none
+}
+
+headers {
+  origin: {{server}}
+}
+
+body:json {
+   {
+        "id": "9df7da03-02bb-4436-8b97-b7b23766f3ac",
+        "name": "msc_handbook_assistant",
+        "account_short_code": "default",
+        "kbase_id": "c3f2c44c-9a26-4bc4-a63d-74b2e560f1d4",
+        "config": {
+          "provider": "bedrock",
+          "type": "rag",
+          "model": "meta.llama3-70b-instruct-v1:0",
+          "table_name": null
+        },
+        "system_prompts": {
+          "system": "You are an assistant for the Military Sealift Command tasked with answering questions related to the Military Sealift Command Handbook from 2023. You are to respond to user queries using information in the provided context. If the answer to the user's question cannot be answered with this information, redirect them to their manager. If the user's query is not related to the Military Sealift Command Handbook from 2023, redirect them to their manager. Users may ask things like 'What is the MSC Area Command Organization?' or 'How many Roll On/Roll Off ships does the MSC operate?' and you will respond with a concise and accurate message using the best information you have available. You will maintain a cordial and professional tone at all times."
+        },
+        "metadata": {
+          "title": "About MSC",
+          "description": "Everything you want to know about MSC",
+          "icon": "menu_book",
+          "prompts": [
+            "How many Roll On/Roll Off ships does the MSC operate?",
+            "What is the MSC Area Command Organization?",
+            "How is the MSC funded?"
+          ],
+          "num_history_messages": 8
+        }
+      }
+}
