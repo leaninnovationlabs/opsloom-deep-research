@@ -1,2 +1,0 @@
-1. chat service needs to accept a message Pydantic model and return AsyncGenerator response stream
-   - all the agent logic is inside the chat service
