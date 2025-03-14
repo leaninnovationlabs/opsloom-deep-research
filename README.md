@@ -89,46 +89,54 @@ npm run docs:dev
 
 -------------------
 
-# Run using Docker
+# Run Using Docker
 
-To run the app as a Docker container locally:
+Run the command:
 
-1. Build out the docker image for opsloom
+```bash
+sudo docker build -t opsloom .
+```
 
-    ```
-      # This will create a docker image opsloom
-      ./infra/scripts/build_app.sh
-    ```
+NOTE: If you run into problems on mac see: [Mac Troubleshooting](#mac-docker-installation)
 
-2. Run the database and docker images 
+```bash
+    docker run -d --env-file .env --name opsloom -p 8080:8080 opsloom
+```
 
-    This will start the db, run the migration scripts and start the opsloom container
-    ```bash
-        docker compose up
-    ```
-    ** Note: You can update the docker docker compose file as needed for the userid and passwords**
+Pull up `http://localhost:8080/opsloom` and confirm the backend is running
 
-### Alternatively you can use docker commands individually
-3a. Start the database container
-    ```bash
-        ./infra/scripts/start_db.sh
-    ```
 
-3a. Run the docker image to do the db upgrade
-    **Note: Make sure .env.docker is configured properly, similar to env but no quotes or spaces**
-    ```bash
-        docker run --env-file .env.docker -w /app opsloom sh -c "uv run alembic upgrade head;"
-    ```
+# Troubleshooting 
 
-3b. Start the opsloom container
-    **Note: Make sure .env.docker is configured properly, similar to env but no quotes or spaces**
-    ```bash
-        docker run -d --env-file .env.docker --name opsloom -p 8080:8080 opsloom
-    ```
+## Mac Docker Installation:
 
--------------------
+If get the error `failed to solve: error getting credentials - err: exit status 1, out: “`: 
 
-# Trouble shooting 
+Open up $HOME/.docker/config.json :
+
+```json
+{
+	"auths": {
+		"https://index.docker.io/v1/": {}
+	},
+	"credsStore": "desktop",
+	"currentContext": "desktop-linux"
+}
+```
+
+
+Change from `desktop` to `osxkeychain`:
+
+```json
+{
+	"auths": {
+		"https://index.docker.io/v1/": {}
+	},
+	"credsStore": "osxkeychain",
+	"currentContext": "desktop-linux"
+}
+```
+
 1. If you get error with psycopg2, you can install the binary version using the following command
 
     ```
