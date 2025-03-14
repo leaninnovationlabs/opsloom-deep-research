@@ -26,11 +26,15 @@ Opsloom works out of the box utilizing postgres as the database. It utilizes dat
         
     You can use the script in db/start_postgres.sh will start one for you or you can use an external AWS RDS. You can configure the default username and password in the .sh file
 
+    ```bash
+        sh db/start_postgres.sh
+    ```
+
     2. Run initial set of database script using alembic
 
     This will run all the scripts under the db folder. The Postgres connection string is read from .env
 
-    ```
+    ```bash
         uv run alembic upgrade head
     ```
 
@@ -51,8 +55,8 @@ Run vite server using the following command
 
 ```bash
     cd frontend
-    npm install
-    npm run start
+    npm i
+    npm run dev
 ```
 
 
