@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "opsloom",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

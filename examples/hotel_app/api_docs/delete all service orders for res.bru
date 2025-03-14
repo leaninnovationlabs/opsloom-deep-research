@@ -1,0 +1,11 @@
+meta {
+  name: delete all service orders for reservation
+  type: http
+  seq: 11
+}
+
+delete {
+  url: {{server}}/serviceorders/for_reservation/{{reservation_id}}
+  body: none
+  auth: none
+}

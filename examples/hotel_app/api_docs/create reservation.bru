@@ -1,0 +1,22 @@
+meta {
+  name: create reservation
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/reservations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "guest_id": "00000000-0000-0000-0000-000000000003",
+    "full_name": "Peter Griffin",
+    "email": "peter.bgbelly@puffy.com",
+    "room_type": "single",
+    "check_in": "2025-06-01T15:00:00",
+    "check_out": "2025-06-02T11:00:00"
+  }
+}

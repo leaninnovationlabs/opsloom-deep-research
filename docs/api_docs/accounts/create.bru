@@ -1,0 +1,68 @@
+meta {
+  name: new account
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/account
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "metadata": {
+      "palette": {
+        "light": {
+          "background": "53 100% 95%",
+          "foreground": "53 5% 10%",
+          "card": "53 50% 90%",
+          "card_foreground": "53 5% 15%",
+          "popover": "53 100% 95%",
+          "popover_foreground": "53 100% 10%",
+          "primary": "53 57% 20%",
+          "primary_foreground": "0 0% 100%",
+          "secondary": "53 30% 70%",
+          "secondary_foreground": "0 0% 0%",
+          "muted": "15 30% 85%",
+          "muted_foreground": "53 5% 40%",
+          "accent": "15 30% 80%",
+          "accent_foreground": "53 5% 15%",
+          "destructive": "0 100% 40%",
+          "destructive_foreground": "53 5% 90%",
+          "border": "53 30% 50%",
+          "input": "53 30% 40%",
+          "ring": "53 57% 20%",
+          "radius": "0.5rem"
+        },
+        "dark": {
+          "background": "53 50% 10%",
+          "foreground": "53 5% 90%",
+          "card": "53 50% 10%",
+          "card_foreground": "53 5% 90%",
+          "popover": "53 50% 5%",
+          "popover_foreground": "53 5% 90%",
+          "primary": "53 57% 20%",
+          "primary_foreground": "0 0% 100%",
+          "secondary": "53 30% 20%",
+          "secondary_foreground": "0 0% 100%",
+          "muted": "15 30% 25%",
+          "muted_foreground": "53 5% 60%",
+          "accent": "15 30% 25%",
+          "accent_foreground": "53 5% 90%",
+          "destructive": "0 100% 40%",
+          "destructive_foreground": "53 5% 90%",
+          "border": "53 30% 40%",
+          "input": "53 30% 40%",
+          "ring": "53 57% 20%",
+          "radius": "0.5rem"
+        }
+      }
+    },
+    "email": "pizza@usa.com",
+    "protection": "email",
+    "short_code": "poop",
+      "name": "testt"
+  }
+}

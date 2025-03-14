@@ -1,0 +1,20 @@
+meta {
+  name: create service order
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{server}}/serviceorders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "reservation_id": 2,
+    "service_id": 3,
+    "quantity": 1,
+    "status": "pending"
+  }
+}

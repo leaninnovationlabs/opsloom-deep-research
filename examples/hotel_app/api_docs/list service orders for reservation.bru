@@ -1,0 +1,11 @@
+meta {
+  name: list service orders for reservation
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{server}}/serviceorders/by_reservation/{{reservation_id}}
+  body: none
+  auth: none
+}

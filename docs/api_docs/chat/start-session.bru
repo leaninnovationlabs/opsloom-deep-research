@@ -1,0 +1,25 @@
+meta {
+  name: start-session
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/chat/session
+  body: json
+  auth: bearer
+}
+
+headers {
+  access-token: {{token}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "assistant_id": "d4f0cd4b-9a35-4fb4-b52c-8cc2745dc987"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: get account
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server}}/account/{{account_id}}
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  account_uuid: 058b2988-f2df-42ef-be3a-1ca43332d1ab
+}

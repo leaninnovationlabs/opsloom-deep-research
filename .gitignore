@@ -1,0 +1,28 @@
+__pycache__
+.venv
+.ruff_cache
+
+# Doc Files
+docs/.vitepress/dist 
+docs/.vitepress/cache
+
+# UI Files
+node_modules
+dist/
+
+#terraform files 
+.terraform/
+terraform.tfstate
+
+.terraform*
+
+#.env
+.env*
+
+# Mac
+.DS_Store
+
+# logfire
+.logfire
+
+infra/deploy/ansible/inventory

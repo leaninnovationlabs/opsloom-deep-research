@@ -1,0 +1,30 @@
+meta {
+  name: get-history
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{server}}/chat/messages?session_id=b298a743-2648-4d36-bbdf-a489d8eaeb95
+  body: json
+  auth: bearer
+}
+
+params:query {
+  session_id: b298a743-2648-4d36-bbdf-a489d8eaeb95
+}
+
+headers {
+  access-token: {{token}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+        "user_id": "a79243d4-a14b-4ac8-8d48-c2044074bb5b",
+        "session_id": "b298a743-2648-4d36-bbdf-a489d8eaeb95"
+  }
+}

@@ -1,0 +1,11 @@
+meta {
+  name: get reservations for guest
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server}}/reservations/{{guest_id}}
+  body: none
+  auth: none
+}

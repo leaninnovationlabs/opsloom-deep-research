@@ -1,0 +1,29 @@
+meta {
+  name: submit-message
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{server}}/chat
+  body: json
+  auth: bearer
+}
+
+headers {
+  access-token: {{token}}
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "session_id": "952d0824-c4da-43ef-a953-fe136746ecc6",
+    "message": {
+      "role": "user",
+      "content": "hello I want to buy gravel"
+    }
+  }
+}

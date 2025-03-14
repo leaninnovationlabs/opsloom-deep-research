@@ -1,0 +1,17 @@
+meta {
+  name: create
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{server}}/create_user
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "account_id": "815da554-3216-44b1-af19-3cd3e0d33afd"
+  }
+}
