@@ -98,7 +98,7 @@ layout: home
             See Docs
           </p>
         </a>
-        <button class="px-10 py-4 rounded-full flex items-center justify-center" style="border: 1px solid #1f6feb">
+        <button class="px-10 py-4 rounded-full flex items-center justify-center hover:opacity-75 transition-opacity" style="border: 1px solid #1f6feb" @click="openLink('https://github.com/leaninnovationlabs/opsloom')" >
           <GithubSVG class="w-[30px] mr-2"/> 
           View on Github
         </button>
