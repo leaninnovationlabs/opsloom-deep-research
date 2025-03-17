@@ -63,7 +63,7 @@ export default defineConfig({
       copyright: '©2025 Opsloom'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/opsloom/' }
+      { icon: 'github', link: 'https://github.com/leaninnovationlabs/opsloom' }
     ]
   }
 })
