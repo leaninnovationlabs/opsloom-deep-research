@@ -148,7 +148,8 @@ Change from `desktop` to `osxkeychain`:
     [Google Fonts](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:support_agent:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=car&icon.size=24&icon.color=%235f6368)
 
 
-# Command to run Langgraph Studio
-PYTHONPATH=. uv run langgraph dev
+### Command to run Langgraph Studio
+`PYTHONPATH=. uv run langgraph dev`
 
-# Note: To run Deep-Research agent, you need to set OPENAI_KEY and TAVILY_API_KEY in .env
+### Note for Deep-Research agent
+To run this agent, ensure that you have set OPENAI_KEY and TAVILY_API_KEY in .env
