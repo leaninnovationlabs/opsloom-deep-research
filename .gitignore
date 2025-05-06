@@ -26,3 +26,11 @@ terraform.tfstate
 .logfire
 
 infra/deploy/ansible/inventory
+
+# LangGraph Studio
+.langgraph/
+.langgraph_api/
+
+# Cursor rules
+*.cursorrules
+*.mdc

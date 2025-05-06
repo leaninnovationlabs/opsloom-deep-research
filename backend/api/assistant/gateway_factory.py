@@ -4,6 +4,7 @@ from backend.api.assistant.impl.rag_ag import RagAssistant
 from backend.api.assistant.impl.norag_ag import NoRagAssistant
 from backend.api.assistant.impl.agent.agent_gateway import AgentGateway
 from backend.api.assistant.impl.text_to_sql_ag import TextToSQL
+from backend.api.assistant.impl.deep_research.deep_research_gateway import DeepResearchGateway
 from backend.api.kbase.models import KnowledgeBase
 from backend.api.assistant.models import Assistant
 from backend.api.chat.repository import ChatRepository, AgentMessagesRepository
@@ -49,6 +50,13 @@ class LLMGatewayFactory:
                 agent_messages_gateway=agent_message_gateway,
                 session_gateway=session_gateway,
                 current_user = current_user
+            )
+        elif assistant_type == "deep_research":
+            return DeepResearchGateway(
+                message_gateway=message_gateway,
+                session_gateway=session_gateway,
+                current_user=current_user,
+                assistant=assistant,
             )
         else:
             raise ValueError(f"Unknown assistant type: {assistant_type}")

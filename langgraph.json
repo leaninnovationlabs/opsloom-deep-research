@@ -1,0 +1,10 @@
+{
+    "graphs": {
+      "deep_research_agent": "backend.api.assistant.impl.deep_research.graph:app"
+    },
+    "dependencies": [
+      "./backend" 
+    ],
+    "env": ".env",
+    "version": "0.0.1" 
+  }

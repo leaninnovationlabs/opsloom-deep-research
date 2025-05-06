@@ -24,7 +24,7 @@ async def chat(
     """
     try:
         chat_service = ChatService(db=db, current_user=current_user)  # pass the DB session
-        response_stream = await chat_service.process_chat_request(
+        response_stream = chat_service.process_chat_request(
             request=request,
             current_user=current_user,
             background_tasks=background_tasks

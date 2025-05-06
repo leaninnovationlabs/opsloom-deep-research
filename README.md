@@ -22,21 +22,21 @@ uv automatically creates a virtual environment when running certain commands. To
 ## 2. Running Database Locally
 Opsloom works out of the box utilizing postgres as the database. It utilizes database to store the user data and the conversation data. Opsloom also provides some examples on how to use Postgres as the vector database to store the embeddings.
 
-    1. Ensure that you have a Postgres container with pgvector running . 
-        
-    You can use the script in db/start_postgres.sh will start one for you or you can use an external AWS RDS. You can configure the default username and password in the .sh file
+2.1 Ensure that you have a Postgres container with pgvector running . 
+    
+You can use the script in db/start_postgres.sh will start one for you or you can use an external AWS RDS. You can configure the default username and password in the .sh file
 
-    ```bash
-        sh db/start_postgres.sh
-    ```
+```bash
+    sh db/start_postgres.sh
+```
 
-    2. Run initial set of database script using alembic
+2.2 Run initial set of database script using alembic
 
-    This will run all the scripts under the db folder. The Postgres connection string is read from .env
+This will run all the scripts under the db folder. The Postgres connection string is read from .env
 
-    ```bash
-        uv run alembic upgrade head
-    ```
+```bash
+    uv run alembic upgrade head
+```
 
 ## 3. Run backend server
 Run python fast api server using the following command
@@ -146,3 +146,9 @@ Change from `desktop` to `osxkeychain`:
 2. Get the Icons from using the following link
 
     [Google Fonts](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:support_agent:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=car&icon.size=24&icon.color=%235f6368)
+
+
+# Command to run Langgraph Studio
+PYTHONPATH=. uv run langgraph dev
+
+# Note: To run Deep-Research agent, you need to set OPENAI_KEY and TAVILY_API_KEY in .env
