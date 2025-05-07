@@ -1,5 +1,5 @@
 # README
-Opsloom provides a way to build out a custom AI agent that can be used to automate tasks within your enterprise and build out various AI assistants. It provies out the box that is responsive and can be easily embedded into your existing applications. Opsloom also provides a way to build out custom assistants that are more domain specific and can be used to automate tasks within your enterprise.
+Opsloom empowers you to build and deploy custom AI agents and assistants tailored for your enterprise. Automate tasks and seamlessly integrate intelligent solutions into your existing applications with our responsive, out-of-the-box framework. Develop domain-specific assistants to streamline workflows and enhance productivity across your organization.
 
 # Local Dev Environment Setup
 Using env.example as a reference, create a .env file and include all keys and environment variables.
