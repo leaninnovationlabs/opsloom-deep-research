@@ -5,6 +5,9 @@ Opsloom provides a way to build out a custom AI agent that can be used to automa
 Using env.example as a reference, create a .env file and include all keys and environment variables.
 You will use this file as an argument to the Docker command which runs the application.
 
+### Docker setup
+To run this locally with minimal overhead, run 'docker compose up'
+
 ## 1. Setup Python Environment
 
 We are using uv for package management.

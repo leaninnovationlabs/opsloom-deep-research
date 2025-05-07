@@ -46,29 +46,9 @@ export const transition = (delay = 0, reduceMotion = false) => {
 }
 
 export const getShortCode = () => {
-    const hostname = window.location.hostname;
     const urlParams = new URLSearchParams(window.location.search);
     const accountParam = urlParams.get('account');
 
-    if (hostname === 'chat.opsloom.io') {
-        return accountParam || 'default';
-    }
-    
-    if (hostname === 'localhost') {
-      return accountParam || 'default';
-    }
-
-    if (hostname.startsWith('172.')) {
-        return accountParam || 'default';
-    }
-    
-    const subdomain = hostname.split('.')[0];
-    
-    if (subdomain && subdomain !== 'www') {
-      return subdomain;
-    }
-    
-    // Fall back to URL param or default
     return accountParam || 'default';
   }
 

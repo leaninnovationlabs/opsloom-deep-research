@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: rag-postgres
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_DB:       ${DB_NAME:-ragdb}
+      POSTGRES_USER:     ${DB_USER:-myuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-mypassword}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+
+  opsloom:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opsloom-deepresearch
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_CONNECTION_STRING: "postgresql+asyncpg://${DB_USER:-myuser}:${DB_PASSWORD:-mypassword}@postgres:5432/${DB_NAME:-ragdb}"
+    depends_on:
+      postgres:
+        condition: service_healthy     
+    ports:
+      - "8080:8080"
+
+
+volumes:
+  pgdata:
