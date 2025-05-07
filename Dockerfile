@@ -1,5 +1,5 @@
 # Build stage for frontend
-FROM node:18-alpine AS frontend-builder
+FROM node:23-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm ci
@@ -22,12 +22,6 @@ RUN apt-get update && apt-get install -y \
     less \
     groff \
     && rm -rf /var/lib/apt/lists/*
-
-# Install AWS CLI v2
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && ./aws/install \
-    && rm -rf aws awscliv2.zip
 
 # Copy Python project files
 COPY pyproject.toml uv.lock ./
