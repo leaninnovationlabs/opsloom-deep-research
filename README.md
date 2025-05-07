@@ -6,7 +6,10 @@ Using env.example as a reference, create a .env file and include all keys and en
 You will use this file as an argument to the Docker command which runs the application.
 
 ### Docker setup
-To run this locally with minimal overhead, run 'docker compose up'
+To run this locally with minimal overhead, run using the command
+```bash
+    docker compose up
+```
 
 ## 1. Setup Python Environment
 
@@ -67,8 +70,8 @@ Run vite server using the following command
 
 Run the docs server using the following command
 ```bash
-npm i
-npm run docs:dev
+    npm i
+    npm run docs:dev
 ```
 -------------------
 
@@ -86,7 +89,7 @@ npm run docs:dev
     To downgrade a version you can run the following command, this will downgrade the database by 1 version
 
     ```
-    uv run alembic downgrade -1
+        uv run alembic downgrade -1
     ```
 
 
@@ -97,7 +100,7 @@ npm run docs:dev
 Run the command:
 
 ```bash
-sudo docker build -t opsloom .
+    sudo docker build -t opsloom .
 ```
 
 NOTE: If you run into problems on mac see: [Mac Troubleshooting](#mac-docker-installation)
@@ -152,7 +155,9 @@ Change from `desktop` to `osxkeychain`:
 
 
 ### Command to run Langgraph Studio
-`PYTHONPATH=. uv run langgraph dev`
+```
+    PYTHONPATH=. uv run langgraph dev
+```
 
 ### Note for Deep-Research agent
 To run this agent, ensure that you have set OPENAI_KEY and TAVILY_API_KEY in .env
