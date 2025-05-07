@@ -4,12 +4,11 @@ from typing import Literal, Dict, List
 
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END 
-from langchain_core.prompts import ChatPromptTemplate as CoreChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 from .state import PlanExecute
 from .models import Plan, Response 
-from .prompts import PLANNER_PROMPT, REPLANNER_PROMPT
+from .prompts import PLANNER_PROMPT, REPLANNER_PROMPT, SYNTHESIS_PROMPT
 from .react_agent import agent_executor
 
 logger = logging.getLogger(__name__)
@@ -24,19 +23,6 @@ synthesis_llm = ChatOpenAI(model="gpt-4o", temperature=0)
 # Chains
 planner = PLANNER_PROMPT | planner_llm.with_structured_output(Plan)
 replanner = REPLANNER_PROMPT | replanner_llm.with_structured_output(Plan) 
-
-# Define a prompt for the final synthesis step
-SYNTHESIS_PROMPT = CoreChatPromptTemplate.from_template(
-    """You are an expert research analyst. Synthesize the following research notes into a final comprehensive report answering the original objective.
-Be clear, concise, and directly address the objective.
-
-Original Objective: {input}
-
-Research Notes (Executed Steps and Results):
-{past_steps}
-
-Final Report:"""
-)
 
 # Chain for synthesis
 synthesizer = SYNTHESIS_PROMPT | synthesis_llm | StrOutputParser()

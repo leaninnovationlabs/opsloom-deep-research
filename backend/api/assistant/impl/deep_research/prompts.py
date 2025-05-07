@@ -27,3 +27,16 @@ Based on the results and remaining plan, determine if the *current remaining pla
 
 Respond using the 'Act' tool, populating the 'plan' field with the updated or empty list of steps."""
 ) 
+
+# Define a prompt for the final synthesis step
+SYNTHESIS_PROMPT = ChatPromptTemplate.from_template(
+    """You are an expert research analyst. Synthesize the following research notes into a final comprehensive report answering the original objective.
+Be clear, concise, and directly address the objective.
+
+Original Objective: {input}
+
+Research Notes (Executed Steps and Results):
+{past_steps}
+
+Final Report:"""
+)
